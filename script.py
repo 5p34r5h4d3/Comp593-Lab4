@@ -1,4 +1,3 @@
-from re import I
 from sys import argv
 from poke_api import search_pokemon
 from pastebin import post_new_paste
