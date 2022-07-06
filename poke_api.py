@@ -1,4 +1,6 @@
 import requests
+from IPython.core.display import Image, display
+from IPython.display import Image, Markdown
 
 URl = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -22,14 +24,17 @@ def search_pokemon(search=' '):
 
     search_url = URl + search 
     resp_msg = requests.get(search_url, params= params)
+    sprites = resp_msg['sprites']
+    sprite_url = sprites['front_default']
+
 
     if resp_msg.status_code == requests.codes.OK:
         print(f'Found {search}')
+        display(Image(sprite_url))
         return resp_msg.json()
    
     else:
         print(f'Did not find {search}')
         print(f'Status code: {resp_msg.status_code}, Error reason: {resp_msg.reason}')
 
-
-
+   
