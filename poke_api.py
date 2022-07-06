@@ -24,13 +24,9 @@ def search_pokemon(search=' '):
 
     search_url = URl + search 
     resp_msg = requests.get(search_url, params= params)
-    sprites = resp_msg['sprites']
-    sprite_url = sprites['front_default']
-
-
+    
     if resp_msg.status_code == requests.codes.OK:
         print(f'Found {search}')
-        display(Image(sprite_url))
         return resp_msg.json()
    
     else:
