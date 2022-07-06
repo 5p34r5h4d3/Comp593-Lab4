@@ -1,6 +1,4 @@
 import requests
-from IPython.core.display import Image, display
-from IPython.display import Image, Markdown
 
 URl = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -22,7 +20,7 @@ def search_pokemon(search=' '):
         
     }
 
-    search_url = URl + search 
+    search_url = URl + search
     resp_msg = requests.get(search_url, params= params)
     
     if resp_msg.status_code == requests.codes.OK:
