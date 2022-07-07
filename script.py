@@ -12,6 +12,7 @@ def main():
     search = argv[1]
     pokedex = search_pokemon(search)
     poke = pokemon(search)
+    pic = get(poke.sprites.front_default).content
 
     if pokedex:
 
@@ -23,9 +24,10 @@ def main():
 
         print(paste_url)
 
-        pic = get(poke.sprites.front_default).content
+        
         image = Image.open(BytesIO(pic))
         image.show()
+        
 
         
 def get_paste_body(pokedex):
