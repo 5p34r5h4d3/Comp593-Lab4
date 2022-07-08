@@ -11,7 +11,6 @@ def search_pokemon(search=' '):
     
     """
 
-
     search = str(search).strip().lower()
     print(f'Searching for {search}...', end='')
 

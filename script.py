@@ -10,6 +10,7 @@ from io import BytesIO
 def main():
 
     search = argv[1]
+    search = str(search).strip().lower()
     pokedex = search_pokemon(search)
     poke = pokemon(search)
     pic = get(poke.sprites.front_default).content
