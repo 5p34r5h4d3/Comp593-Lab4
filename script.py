@@ -21,7 +21,7 @@ def main():
 
         paste_body = get_paste_body(pokedex)
 
-        paste_url = post_new_paste(paste_title, paste_body, '10M')
+        paste_url = post_new_paste(paste_title, paste_body, '1W')
 
         print(paste_url)
 
